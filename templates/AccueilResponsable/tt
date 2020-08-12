@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+
+class InsertclientnonsalarieController extends AbstractController
+{
+    /**
+     * @Route("/insertclientnonsalarie", name="insertclientnonsalarie")
+     */
+    public function index()
+    {
+        return $this->render('insertclientnonsalarie/index.html.twig', [
+            'controller_name' => 'InsertclientnonsalarieController',
+        ]);
+    }
+}
+
+
+
+
+
