@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\ResponsableCompte;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 class LoginController extends AbstractController
 {
@@ -23,6 +25,23 @@ class LoginController extends AbstractController
     public function login()
     {
         //Vérifier ici si l'utilisateur existe d'abord
-        return $this->redirectToRoute('accueil_responsable');
+        extract($_POST);
+echo $mot_passe_responsable;
+        $entiemanager = $this->getDoctrine()->getManager();
+        $resultat = $entiemanager->getRepository(ResponsableCompte::class)->findOneBy(
+            ['login' => $login_responsable] ,
+            /* ['motDePasse' => $mot_passe_responsable] */);
+       
+        if ($resultat)
+        {
+            return $this->redirectToRoute('accueil_responsable');
+        }
+        else
+        {
+            $data['error'] = "erreur";
+            return $this->redirectToRoute('acueil');
+        }
+
+        
     }
 }

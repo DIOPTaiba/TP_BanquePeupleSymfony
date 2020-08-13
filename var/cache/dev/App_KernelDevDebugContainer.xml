@@ -366,6 +366,49 @@
         <argument type="service" id=".service_locator.g9CqTPp.App\Controller\LoginController"/>
       </call>
     </service>
+    <service id="App\Form\ClientNonSalarieType" class="App\Form\ClientNonSalarieType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\ClientMoralRepository" class="App\Repository\ClientMoralRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ClientNonSalarieRepository" class="App\Repository\ClientNonSalarieRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ClientSalarieRepository" class="App\Repository\ClientSalarieRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ClientsRepository" class="App\Repository\ClientsRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\CompteBloqueRepository" class="App\Repository\CompteBloqueRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\CompteCourantRepository" class="App\Repository\CompteCourantRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\CompteEpargneRepository" class="App\Repository\CompteEpargneRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ComptesRepository" class="App\Repository\ComptesRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\EtatCompteRepository" class="App\Repository\EtatCompteRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ResponsableCompteRepository" class="App\Repository\ResponsableCompteRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory" public="false"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener" public="false">
       <tag name="kernel.event_subscriber"/>
@@ -800,9 +843,11 @@
       <argument type="service" id="form.registry"/>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
+        <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\ClientNonSalarieType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1144,7 +1189,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.AYkowom"/>
+      <argument type="service" id=".service_locator.3csekDk"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3590,7 +3635,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.0yahJpG"/>
+      <argument type="service" id=".service_locator.L2avOY0"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4896,6 +4941,28 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LoginController" class="App\Controller\LoginController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ClientNonSalarieType" class="App\Form\ClientNonSalarieType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ClientNonSalarieType" class="App\Form\ClientNonSalarieType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ClientMoralRepository" class="App\Repository\ClientMoralRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ClientMoralRepository" class="App\Repository\ClientMoralRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ClientNonSalarieRepository" class="App\Repository\ClientNonSalarieRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ClientNonSalarieRepository" class="App\Repository\ClientNonSalarieRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ClientSalarieRepository" class="App\Repository\ClientSalarieRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ClientSalarieRepository" class="App\Repository\ClientSalarieRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ClientsRepository" class="App\Repository\ClientsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ClientsRepository" class="App\Repository\ClientsRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CompteBloqueRepository" class="App\Repository\CompteBloqueRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CompteBloqueRepository" class="App\Repository\CompteBloqueRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CompteCourantRepository" class="App\Repository\CompteCourantRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CompteCourantRepository" class="App\Repository\CompteCourantRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CompteEpargneRepository" class="App\Repository\CompteEpargneRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CompteEpargneRepository" class="App\Repository\CompteEpargneRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ComptesRepository" class="App\Repository\ComptesRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ComptesRepository" class="App\Repository\ComptesRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EtatCompteRepository" class="App\Repository\EtatCompteRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\EtatCompteRepository" class="App\Repository\EtatCompteRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResponsableCompteRepository" class="App\Repository\ResponsableCompteRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ResponsableCompteRepository" class="App\Repository\ResponsableCompteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.WaGDpDt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5222,9 +5289,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.AYkowom" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.3csekDk" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\ClientNonSalarieType" type="service" id="App\Form\ClientNonSalarieType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service" id="form.type.color"/>
@@ -5243,9 +5311,20 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.0yahJpG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.L2avOY0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="App\Repository\ClientMoralRepository" type="service" id="App\Repository\ClientMoralRepository"/>
+        <argument key="App\Repository\ClientNonSalarieRepository" type="service" id="App\Repository\ClientNonSalarieRepository"/>
+        <argument key="App\Repository\ClientSalarieRepository" type="service" id="App\Repository\ClientSalarieRepository"/>
+        <argument key="App\Repository\ClientsRepository" type="service" id="App\Repository\ClientsRepository"/>
+        <argument key="App\Repository\CompteBloqueRepository" type="service" id="App\Repository\CompteBloqueRepository"/>
+        <argument key="App\Repository\CompteCourantRepository" type="service" id="App\Repository\CompteCourantRepository"/>
+        <argument key="App\Repository\CompteEpargneRepository" type="service" id="App\Repository\CompteEpargneRepository"/>
+        <argument key="App\Repository\ComptesRepository" type="service" id="App\Repository\ComptesRepository"/>
+        <argument key="App\Repository\EtatCompteRepository" type="service" id="App\Repository\EtatCompteRepository"/>
+        <argument key="App\Repository\ResponsableCompteRepository" type="service" id="App\Repository\ResponsableCompteRepository"/>
+      </argument>
     </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
       <argument type="service" id="security.access.authenticated_voter"/>
