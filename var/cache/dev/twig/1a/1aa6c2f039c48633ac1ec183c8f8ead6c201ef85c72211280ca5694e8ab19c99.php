@@ -69,17 +69,17 @@ class __TwigTemplate_0d542aecd1b6a71b9c741879adbcf05f1e682c00419e0a3f9ee5e87bfff
 
         <a href=\"";
         // line 27
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_non_salarie");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("liste_client_non_salarie");
         echo "\">Compte Client non Salarié</a>
 
         <a href=\"";
         // line 29
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_salarie");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("liste_client_salarie");
         echo "\">Compte Client Salarié</a>
 
         <a href=\"";
         // line 31
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_moral");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("liste_client_moral");
         echo "\">Compte Client Moral</a>
 
     </div>
@@ -143,11 +143,11 @@ class __TwigTemplate_0d542aecd1b6a71b9c741879adbcf05f1e682c00419e0a3f9ee5e87bfff
 
     <div class=\"accueil_responsable\">
 
-        <a href=\"{{ path('client_non_salarie')}}\">Compte Client non Salarié</a>
+        <a href=\"{{ path('liste_client_non_salarie')}}\">Compte Client non Salarié</a>
 
-        <a href=\"{{ path('client_salarie')}}\">Compte Client Salarié</a>
+        <a href=\"{{ path('liste_client_salarie')}}\">Compte Client Salarié</a>
 
-        <a href=\"{{ path('client_moral')}}\">Compte Client Moral</a>
+        <a href=\"{{ path('liste_client_moral')}}\">Compte Client Moral</a>
 
     </div>
 

@@ -26,7 +26,7 @@ class LoginController extends AbstractController
     {
         //Vérifier ici si l'utilisateur existe d'abord
         extract($_POST);
-echo $mot_passe_responsable;
+        //echo $mot_passe_responsable;
         $entiemanager = $this->getDoctrine()->getManager();
         $resultat = $entiemanager->getRepository(ResponsableCompte::class)->findOneBy(
             ['login' => $login_responsable] ,
@@ -39,7 +39,7 @@ echo $mot_passe_responsable;
         else
         {
             $data['error'] = "erreur";
-            return $this->redirectToRoute('acueil');
+            return $this->redirectToRoute('accueil');
         }
 
         

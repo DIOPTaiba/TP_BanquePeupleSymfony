@@ -63,6 +63,11 @@ class ClientSalarie
      */
     private $identifiantEntreprise;
 
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
+    private $carteIdentite;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -172,6 +177,18 @@ class ClientSalarie
     public function setIdentifiantEntreprise(string $identifiantEntreprise): self
     {
         $this->identifiantEntreprise = $identifiantEntreprise;
+
+        return $this;
+    }
+
+    public function getCarteIdentite(): ?string
+    {
+        return $this->carteIdentite;
+    }
+
+    public function setCarteIdentite(string $carteIdentite): self
+    {
+        $this->carteIdentite = $carteIdentite;
 
         return $this;
     }

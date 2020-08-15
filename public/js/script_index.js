@@ -80,49 +80,78 @@ function controle_champs_caissiere() {
     }
 }
 /*===================Gestion choix client existant ou nouveau client=============*/
-var client_existant = document.getElementById('client_existant');
-var nouveau_client = document.getElementById('nouveau_client');
+/* var client_existant = document.getElementById('client_existant');
+var nouveau_client = document.getElementById('nouveau_client'); */
 var saisie_id_client = document.getElementById('saisie_id_client');
+
 
 /*=====affichage formulaire client non salarie ou non selon choix client existant ou non======*/
 var form_compte_non_salarie = document.getElementById('form_compte_non_salarie');
+var liste_client_non_salarie = document.getElementById('liste_client_non_salarie');
+
 
 function affiche_client_existant() {
     saisie_id_client.style.display = "block";
     form_compte_non_salarie.style.display = "none";
+    liste_client_non_salarie.style.display = "none";
 }
 
 function affiche_nouveau_client() {
-    saisie_id_client.style.display = "none";
     form_compte_non_salarie.style.display = "block";
+    saisie_id_client.style.display = "none";
+    liste_client_non_salarie.style.display = "none";
 
+}
+
+function affiche_liste_client_non_salarie() {
+    saisie_id_client.style.display = "none";
+    form_compte_non_salarie.style.display = "none";
+    liste_client_non_salarie.style.display = "block";
 
 }
 
 /*=====affichage formulaire client salarie ou non selon choix client existant ou non======*/
 var form_compte_salarie = document.getElementById('form_compte_salarie');
+var liste_client_salarie = document.getElementById('liste_client_salarie');
 
 function affiche_client_existant_salarie() {
     saisie_id_client.style.display = "block";
     form_compte_salarie.style.display = "none";
+    liste_client_salarie.style.display = "none";
 }
 
 function affiche_nouveau_client_salarie() {
     saisie_id_client.style.display = "none";
     form_compte_salarie.style.display = "block";
+    liste_client_salarie.style.display = "none";
+}
+
+function affiche_liste_client_salarie() {
+    saisie_id_client.style.display = "none";
+    form_compte_salarie.style.display = "none";
+    liste_client_salarie.style.display = "block";
 }
 
 /*=====affichage formulaire client moral ou non selon choix client existant ou non======*/
 var form_compte_entreprise = document.getElementById('form_compte_entreprise');
+var liste_client_moral = document.getElementById('liste_client_moral');
 
 function affiche_client_existant_moral() {
     saisie_id_client.style.display = "block";
     form_compte_entreprise.style.display = "none";
+    liste_client_moral.style.display = "none";
 }
 
 function affiche_nouveau_client_moral() {
     saisie_id_client.style.display = "none";
     form_compte_entreprise.style.display = "block";
+    liste_client_moral.style.display = "none";
+}
+
+function affiche_liste_client_moral() {
+    saisie_id_client.style.display = "none";
+    form_compte_entreprise.style.display = "none";
+    liste_client_moral.style.display = "block";
 }
 
 /*==========Fonction permettant de signlé l'erreur des champ non valide=========*/

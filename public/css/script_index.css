@@ -29,6 +29,11 @@
         font-family: Arial, "Arial Black", "Times New Roman", Times, serif;
     }
     
+    h3 a {
+        text-align: center;
+        color: #EFEFEF;
+    }
+    
     .choix_profil,
     .accueil_responsable {
         width: 65%;
@@ -237,7 +242,7 @@
     }
     
     .choix_client {
-        width: 400px;
+        width: 600px;
         margin: auto;
         background-color: #EFEFEF;
         margin-top: 3%;
@@ -245,9 +250,11 @@
     }
     
     #select_client {
-        width: 340px;
+        width: 500px;
         margin: auto;
         text-align: center;
+        display: flex;
+        /* justify-content: space-between; */
     }
     
     #select_client button {
